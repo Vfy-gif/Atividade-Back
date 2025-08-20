@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Html - criação da tabuada</title>
+</head>
+
+<body>
+    <h1>Tabuada</h1>
+    <input type="number" id="numero_tabuada">
+    <button id="calcular">calcular</button>
+    <div id="tabuada"></div>
+    <script>
+        const calcularbtn = document.getElementById('calcular')
+        const tabuada = document.getElementById('tabuada')
+        const numero_tabuada = document.getElementById('numero_tabuada')
+
+        function calcularTabuada(numero) {
+
+            tabuada.innerHTML = ""
+            let i = 0
+
+            while (i <= 10) {
+                let resultado = document.createElement('div')
+                resultado.innerHTML = `${numero}+${i}=${numero * i}`;
+                tabuada.appendChild(resultado);
+                i++
+            }
+
+        }
+
+        function funcionar() {
+            const numero = parseInt(numero_tabuada.value);
+            calcularTabuada(numero);
+        }
+
+        calcularbtn.addEventListener('click', funcionar)
+
+    </script>
+</body>
+
+</html>
